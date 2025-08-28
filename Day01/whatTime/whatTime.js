@@ -1,13 +1,5 @@
-//whatTime.js
-//이 파일을 실행하면,
-//`현재 시간은 ~~시 ~~분 ~~초 입니다.`
+// db.js
+const sqlite3 = require("sqlite3").verbose();
 
-const time = new Date();
-const hour = time.getHours();
-const min = time.getMinutes();
-const seconds = time.getSeconds();
-console.log(`현재 시간은 ${hour}시 ${min}분 ${seconds}초 입니다.`);
-
-setTimeout(() => {
-  console.log("프로그램 종료!");
-}, 10000);
+// DB 연결 (없으면 새로 생성됨)
+const db = new sqlite3.Database("mydata.db");
